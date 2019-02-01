@@ -1,0 +1,1 @@
+{"index.js":"function sumAll(arr) {\n  const start = arr[0] < arr[1] ? arr[0] : arr[1];\n  const span = Math.abs(arr[0] - arr[1]) + 1;\n  const mapFx = x => x = x + start;\n  const fullArr = [...Array(span).keys()].map(mapFx);\n  const reducer = (acc, item) => acc + item; \n  return fullArr.reduce(reducer);\n}\n\nconsole.log(sumAll([1, 4]));"}

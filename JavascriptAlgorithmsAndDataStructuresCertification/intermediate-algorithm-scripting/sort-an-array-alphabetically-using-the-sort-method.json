@@ -1,0 +1,1 @@
+{"index.js":"\nfunction alphabeticalOrder(arr) {\n  // Add your code below this line\n  \n  const sort_function = (a,b) => {\n    return a.toLowerCase().localeCompare(b.toLowerCase()); \n  };\n  return arr.sort(sort_function);\n  // Add your code above this line\n}\nconsole.log(alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"]));"}

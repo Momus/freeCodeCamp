@@ -1,0 +1,1 @@
+{"index.js":"function mutation(arr) {\n  let one = arr[0].toUpperCase().split('');\n  let two = arr[1].toUpperCase().split('');\n  return two.every(val => one.includes(val));\n}\n\nconsole.log(mutation([\"hello\", \"hey\"]));\nconsole.log(mutation([\"hello\", \"Hello\"]))"}
