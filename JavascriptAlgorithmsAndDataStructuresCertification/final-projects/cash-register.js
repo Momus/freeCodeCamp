@@ -30,11 +30,21 @@ const makeChange = (toChange, cid) => {
 
 
 
+const addDrawer = (drawer) =>  drawer.reduce((a,slot) => a + slot[1], 0);
+  
+
 function checkCashRegister(price, cash, cid) {
-  let change = makeChange(cash - price, cid);
-  // Here is your change, ma'am.
-  return {"status": "OPEN", change};
+  let change = makeChange(cash - price, cid);   
+    if (addDrawer(change) === addDrawer(cid)){
+      change = cid.reverse(); 
+      return {status: "CLOSED", change};
+    } else if (change.length === 0){          
+        return  {status: "INSUFFICIENT_FUNDS", change};
+    } else {
+        return {status: "OPEN", change};;
+    }
 }
+ 
 
 // Example cash-in-drawer array:
 // [["PENNY", 1.01],
